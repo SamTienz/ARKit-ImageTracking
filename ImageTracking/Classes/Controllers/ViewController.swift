@@ -46,11 +46,18 @@ class ViewController: UIViewController,ARSCNViewDelegate {
     
     
     func resetTracking() {
+        //設定辨識圖集資料夾名稱
         guard let refImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else { return }
+        
+        //設定AR Seesion 配置方式
         let configuration = ARWorldTrackingConfiguration()
         configuration.detectionImages = refImages
+        
+        //設定ARSCNView Run Option
         let options: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
         sceneView.session.run(configuration, options: options)
+        
+        
         statusLabel.text = "Move camera to your piture"
     }
     @IBAction func resetBtnAction(_ sender: Any) {
@@ -75,7 +82,7 @@ class ViewController: UIViewController,ARSCNViewDelegate {
     func getObjectNode(detectedImageName:String) -> SCNNode{
         var node = SCNNode()
         switch detectedImageName {
-        case "Valk":
+        case "Apple":
             node = wolfNode
         default:
             node = SCNNode()
