@@ -100,7 +100,7 @@ func resetTracking() {
 
 ``` swift  
 func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-		//將傳入的ARAnchor收下並處理
+	//將傳入的ARAnchor收下並處理
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
         //辨識到的圖片
         let referenceImage = imageAnchor.referenceImage
@@ -114,5 +114,5 @@ func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: AR
 
 ## 完成啦！
 現在你的App已經會辨識所有你放在AR Resources中的每一張圖片，並且將他的名字顯示在Label上
-##接著我還會在這邊教如何在辨識目標上加入3D物件
-敬請期更新謝謝：）
+## 接著我還會在這邊教如何在辨識目標上加入3D物件
+敬請期待更新謝謝：）
