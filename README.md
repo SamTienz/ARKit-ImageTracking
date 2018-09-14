@@ -100,7 +100,7 @@ func resetTracking() {
 
 ``` swift  
 func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-		  //將傳入的ARAnchor收下並處理
+		//將傳入的ARAnchor收下並處理
         guard let imageAnchor = anchor as? ARImageAnchor else { return }
         //辨識到的圖片
         let referenceImage = imageAnchor.referenceImage
